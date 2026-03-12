@@ -38,9 +38,9 @@ export const login_controller = async (req, res) => {
 
     const COOKIE_OPTS = {
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: "none",
       // secure: false,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       // secure: process.env.NODE_ENV,
       maxAge: 3600000,
     };
