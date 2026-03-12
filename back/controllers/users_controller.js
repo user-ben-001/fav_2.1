@@ -39,7 +39,8 @@ export const login_controller = async (req, res) => {
     const COOKIE_OPTS = {
       httpOnly: true,
       sameSite: "lax",
-      secure: false,
+      // secure: false,
+      secure: "production",
       // secure: process.env.NODE_ENV,
       maxAge: 36000000,
     };
@@ -77,8 +78,5 @@ export const login_controller = async (req, res) => {
 };
 
 export const logout_controller = (req, res) => {
-  return res
-    .status(200)
-    .clearCookie("token")
-    .json({ message: "ok" });
+  return res.status(200).clearCookie("token").json({ message: "ok" });
 };
