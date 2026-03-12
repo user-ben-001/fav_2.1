@@ -40,7 +40,7 @@ export const login_controller = async (req, res) => {
       httpOnly: true,
       sameSite: "none",
       // secure: false,
-      secure: "production",
+      secure: true,
       // secure: process.env.NODE_ENV,
       maxAge: 36000000,
     };
