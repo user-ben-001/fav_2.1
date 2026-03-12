@@ -74,7 +74,7 @@ export const login_controller = async (req, res) => {
       });
     });
   } catch (error) {
-    return res.status(500).json({ error: error, request: req });
+    return res.status(500).json({ error: error, request: req.body });
   }
 };
 
