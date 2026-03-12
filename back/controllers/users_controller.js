@@ -38,12 +38,11 @@ export const login_controller = async (req, res) => {
 
     const COOKIE_OPTS = {
       httpOnly: true,
-      sameSite: "none",
+      sameSite: "lax",
       // secure: false,
-      secure: true,
-      partitioned: true,
+      secure: "production",
       // secure: process.env.NODE_ENV,
-      maxAge: 36000000,
+      maxAge: 3600000,
     };
 
     const user = await findUserByEmail_model(email);
