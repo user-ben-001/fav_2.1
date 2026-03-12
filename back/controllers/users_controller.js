@@ -41,6 +41,7 @@ export const login_controller = async (req, res) => {
       sameSite: "none",
       // secure: false,
       secure: true,
+      partitioned: true,
       // secure: process.env.NODE_ENV,
       maxAge: 36000000,
     };
