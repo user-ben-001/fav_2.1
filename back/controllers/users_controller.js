@@ -43,6 +43,7 @@ export const login_controller = async (req, res) => {
       secure: "production",
       // secure: process.env.NODE_ENV,
       maxAge: 36000000,
+      Partitioned,
     };
 
     const user = await findUserByEmail_model(email);
