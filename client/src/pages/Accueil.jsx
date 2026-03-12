@@ -8,7 +8,8 @@ import Todo from "../assets/components/Todo/Todo.jsx";
 
 const Accueil = () => {
   const id = localStorage.getItem("user_id");
-  const host = "http://localhost:3000";
+  // const host = "http://localhost:3000";
+  const host = "https://fav-2-1-server.onrender.com";
 
   return (
     <>
