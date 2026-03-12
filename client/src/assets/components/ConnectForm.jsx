@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ConnectForm = () => {
+const ConnectForm = (props) => {
+  const host = props.host;
   const [formMode, setFormMode] = useState("login");
 
   const [username, setUsername] = useState();
@@ -26,7 +27,7 @@ const ConnectForm = () => {
 
     try {
       if (email && password != "") {
-        const response = await fetch("http://localhost:3000/users/login", {
+        const response = await fetch(host +"/users/login", {
           method: "POST",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
@@ -39,7 +40,6 @@ const ConnectForm = () => {
 
         const data = await response.json();
         // console.log(data);
-        
 
         if (data.ok) {
           localStorage.setItem("user_id", data.user_id);
@@ -59,7 +59,7 @@ const ConnectForm = () => {
 
     try {
       if (username && email && password != "") {
-        const response = await fetch("http://localhost:3000/users/register", {
+        const response = await fetch(host + "/users/register", {
           method: "POST",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
