@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(import.meta.dirname, "./public")));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.URL_CORS,
     credentials: true,
   }),
 );
